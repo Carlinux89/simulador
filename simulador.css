@@ -1,70 +1,290 @@
+:root {
+    --naranja: #f26d00;
+    --oscuro: #1f1f1f;
+    --gris: #6c757d;
+    --fondo: #f4f6f8;
+    --blanco: #ffffff;
+    --verde: #2e7d32;
+    --rojo: #c62828;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
     margin: 0;
-    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--fondo);
+    color: var(--oscuro);
 }
 
+/* HEADER */
+.header {
+    background-color: var(--blanco);
+    border-bottom: 3px solid var(--naranja);
+    padding: 12px 20px;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 45px;
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+
+/* ===== LAYOUT PRINCIPAL ===== */
 .container {
-    width: 400px;
-    margin: 40px auto;
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+/* Escritorio: 2 columnas */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Botones ocupan todo el ancho abajo */
+    .buttons {
+        grid-column: 1 / -1;
+    }
+}
+
+/* TARJETAS */
+.card {
+    background: var(--blanco);
     padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
+    border-radius: 12px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-h2 {
-    margin-top: 20px;
+.card h2 {
+    margin-top: 0;
+    border-left: 4px solid var(--naranja);
+    padding-left: 10px;
     font-size: 18px;
 }
 
+/* FORMULARIOS */
 label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 12px;
+    margin-bottom: 4px;
     display: block;
-    margin-top: 10px;
-    font-weight: bold;
 }
 
 input {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 8px 10px;
+    /* más compacto */
+    border-radius: 6px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
 }
 
-p {
-    margin-top: 10px;
+input:focus {
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 2px rgba(242, 109, 0, 0.15);
 }
 
-span {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.buttons {
-    margin-top: 20px;
+/* RESULTADOS */
+.result p {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.result span {
+    opacity: 0.6;
+    transform: translateY(0);
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* ESTADOS */
+
+.estado span {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+
+.estado-aprobado {
+    background-color: #e8f5e9;
+    color: var(--verde);
+}
+
+.estado-rechazado {
+    background-color: #fdecea;
+    color: var(--rojo);
+}
+
+/* BOTONES */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
+    flex: 1;
+    padding: 14px;
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
+    border-radius: 10px;
+    font-weight: 700;
     cursor: pointer;
+    background-color: var(--naranja);
+    color: white;
+}
+
+button.secondary {
+    background-color: var(--gris);
 }
 
 button:hover {
-    background-color: #2980b9;
+    opacity: 0.9;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--oscuro);
+    color: white;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .header h1 {
+        font-size: 16px;
+    }
+}
+
+/* ===== FORMATO MONETARIO VISUAL ===== */
+.result span::before {
+    content: "$ ";
+    font-weight: 500
+}
+
+/* ===== EXCEPCIÓN: el estado del crédito NO es monetario ===== */
+#spnEstadoCredito::before {
+    content: "";
+}
+
+`` input[type="text"] {
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ===== ICONOS FINANCIEROS ===== */
+i {
+    color: var(--naranja);
+    margin-right: 6px;
+}
+
+/* El icono sigue el color del estado */
+
+.estado {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+.estado i {
+    color: currentColor;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 16px 18px;
+    /* menos altura */
+    border-radius: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    /* más sutil */
+}
+
+/* ===== ESTADO INICIAL (ANTES DE CALCULAR) ===== */
+.result span:empty::after {
+    content: "— —";
+    color: #aaa;
+    font-weight: 400;
+}
+
+/* Cuando el JS inserta contenido */
+.result span:not(:empty) {
+    opacity: 1;
+    transform: translateY(-1px);
+    background-color: rgba(242, 109, 0, 0.12);
+}
+
+#spnCuotaMensual:not(:empty),
+#spnTotalPrestamo:not(:empty) {
+    background-color: rgba(242, 109, 0, 0.18);
+    border-left: 3px solid var(--naranja);
+}
+
+#spnEstadoCredito:empty::after {
+    content: "ANALIZANDO…";
+    opacity: 0.7;
+}
+
+#spnEstadoCredito:not(:empty) {
+    animation: estadoPop 0.3s ease;
+}
+
+@keyframes estadoPop {
+    from {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .result span:not(:empty) {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    #spnCuotaMensual:not(:empty),
+    #spnTotalPrestamo:not(:empty) {
+        background-color: rgba(242, 109, 0, 0.25);
+    }
 }

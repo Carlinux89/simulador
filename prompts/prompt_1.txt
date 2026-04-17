@@ -1,0 +1,17 @@
+//prompt1
+Actúa como un diseñador gráfico con experiencia en UI / UX.
+Mejora la parte visual HTML y CSS de mi proyecto quiero darle un aspecto empresarial responsive, para la entidad financiera Pilahuin Tio.
+Utiliza el logo y los colores de la imagen adjunta, no cambies los ids de los componentes del HTML, realiza las preguntas necesarias para estar de acuerdo y obtener un producto final profesional.
+
+//prompt2
+Aplicar formato monetario, iconos financieros, prohibido manipular el JS
+
+//prompt3
+modifiquemos el tamaño del formulario aplicando diseño minimalista, el retorno de los valores a la izquierda y los labels alineados para mejor experiencia del usuario
+
+//prompt4
+Aplica diseño en dos columnas
+
+// prompt5
+Estado del crédito:
+ $ ANALIZANDO..., no quiero que aparezca ese signo de dolar solo en esa linea
