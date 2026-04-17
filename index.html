@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Crédito | Pilahuin Tio</title>
+
+    <!-- Tipografía moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <link rel="stylesheet" href="simulador.css" />
+    <script src="funciones.js"></script>
+    <script src="simulador.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <img src="image/pilahuinTio.png" alt="Pilahuin Tio" class="logo">
+            <h1>Simulador de Crédito</h1>
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="container">
+
+        <section class="card">
+            <h2>Datos financieros</h2>
+
+            <label for="txtIngresos">Ingresos</label>
+            <input type="text" id="txtIngresos" inputmode="decimal" placeholder="$ 0.00">
+
+            <label for="txtEgresos">Egresos</label>
+            <input type="text" id="txtEgresos" inputmode="decimal" placeholder="$ 0.00">
+
+            <div class="result">
+                <p><i class="fa-solid fa-coins"></i> Disponible: <span id="spnDisponible"></span></p>
+                <p><i class="fa-solid fa-chart-line"></i> Capacidad de pago mensual:
+                    <span id="spnCapacidadPago"></span>
+                </p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Solicitud de crédito</h2>
+            <label for="txtMonto">Monto solicitado</label>
+            <input type="text" id="txtMonto" inputmode="decimal" placeholder="$ 0.00">
+            <label for="txtPlazo">Plazo (años)</label>
+            <input type="text" id="txtPlazo">
+            <label for="txtTasaInteres">Tasa de interés (%)</label>
+            <input type="text" id="txtTasaInteres">
+            <div class="result">
+                <p><i class="fa-solid fa-percent"></i> Interés a pagar:
+                    <span id="spnInteresPagar"></span>
+                </p>
+                <p><i class="fa-solid fa-piggy-bank"></i> Total préstamo:
+                    <span id="spnTotalPrestamo"></span>
+                </p>
+                <p><i class="fa-solid fa-calendar-check"></i> Cuota mensual:
+                    <span id="spnCuotaMensual"></span>
+                </p>
+                <p class="estado">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Estado del crédito:
+                    <span id="spnEstadoCredito">ANALIZANDO...</span>
+                </p>
+            </div>
+        </section>
+
+        <div class="buttons">
+            <button id="btnCalcularCredito" onclick="calcular()">Calcular crédito</button>
+            <button id="btnReiniciar" onclick="reiniciar()" class="secondary">Reiniciar</button>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2026 Entidad financiera Pilahuin Tio
+    </footer>
+
+</body>
+
+</html>
