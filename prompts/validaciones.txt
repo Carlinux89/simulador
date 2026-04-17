@@ -1,0 +1,13 @@
+//prompt1
+Agrega todas las validaciones que considere necesarias en este formulario, como tipos de datos, montos máximos y mínimos, campos obligatorios, solo datos numericos, datos positivos, letras, y caracteres especiales.Esas validaciones se ejecutarán una vez que presione el botón Calcular Crédito y aparecerán los errores debajo de cada campo validado, no modifiques ids de los componentes
+
+//prompt2
+validar TasaInteres sea solo dos digitos
+no se aceptan espacios en blanco ni al inicio ni final, aplica para todo el formulario. egresos no puede ser mayor a ingresos
+no se acepta ingresar valores negativo ejemplo: -500
+
+//promt3
+validar ingreso y egreso, estoy digitando ingresos: -1.2 y egresos: -1, me sale mensaje No puede ser mayor que ingresos
+
+//prompt4
+considerando la primera intruccion, dime el tipo de commit a aplicar y explicame en lenguaje sencillo el porque el uso

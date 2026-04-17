@@ -24,7 +24,7 @@
     <header class="header">
         <div class="header-content">
             <img src="image/pilahuinTio.png" alt="Pilahuin Tio" class="logo">
-            <h1>Simulador de Crédito</h1>
+            <h1>Simulador de Crédito Educativo</h1>
         </div>
     </header>
 
@@ -36,9 +36,11 @@
 
             <label for="txtIngresos">Ingresos</label>
             <input type="text" id="txtIngresos" inputmode="decimal" placeholder="$ 0.00">
+            <small class="error" id="errIngresos"></small>
 
             <label for="txtEgresos">Egresos</label>
             <input type="text" id="txtEgresos" inputmode="decimal" placeholder="$ 0.00">
+            <small class="error" id="errEgresos"></small>
 
             <div class="result">
                 <p><i class="fa-solid fa-coins"></i> Disponible: <span id="spnDisponible"></span></p>
@@ -52,10 +54,13 @@
             <h2>Solicitud de crédito</h2>
             <label for="txtMonto">Monto solicitado</label>
             <input type="text" id="txtMonto" inputmode="decimal" placeholder="$ 0.00">
+            <small class="error" id="errMonto"></small>
             <label for="txtPlazo">Plazo (años)</label>
             <input type="text" id="txtPlazo">
+            <small class="error" id="errPlazo"></small>
             <label for="txtTasaInteres">Tasa de interés (%)</label>
             <input type="text" id="txtTasaInteres">
+            <small class="error" id="errTasaInteres"></small>
             <div class="result">
                 <p><i class="fa-solid fa-percent"></i> Interés a pagar:
                     <span id="spnInteresPagar"></span>

@@ -47,16 +47,3 @@ function aprobarCredito(capacidadPago, cuotaMensual) {
     }
 }
 
-function reiniciar() {
-    document.getElementById("txtIngresos").value = "";
-    document.getElementById("txtEgresos").value = "";
-    document.getElementById("txtMonto").value = "";
-    document.getElementById("txtPlazo").value = "";
-    document.getElementById("txtTasaInteres").value = "";
-    mostrarEnSpan("spnDisponible", "");
-    mostrarEnSpan("spnCapacidadPago", "");
-    mostrarEnSpan("spnInteresPagar", "");
-    mostrarEnSpan("spnTotalPrestamo", "");
-    mostrarEnSpan("spnCuotaMensual", "");
-    mostrarEnSpan("spnEstadoCredito", "ANALIZANDO...");
-}
