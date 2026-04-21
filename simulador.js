@@ -53,15 +53,15 @@ function calcular() {
     let tasa = document.getElementById("txtTasaInteres").value;
 
     // ===== VALIDACIÓN ESPACIOS (TODOS) =====
-    if (tieneEspacios(ingresos)) {
-        document.getElementById("errIngresos").textContent = "No se permiten espacios";
-        valido = false;
-    }
+    // if (tieneEspacios(ingresos)) {
+    //     document.getElementById("errIngresos").textContent = "No se permiten espacios";
+    //     valido = false;
+    // }
 
-    if (tieneEspacios(egresos)) {
-        document.getElementById("errEgresos").textContent = "No se permiten espacios";
-        valido = false;
-    }
+    // if (tieneEspacios(egresos)) {
+    //     document.getElementById("errEgresos").textContent = "No se permiten espacios";
+    //     valido = false;
+    // }
 
     if (tieneEspacios(monto)) {
         document.getElementById("errMonto").textContent = "No se permiten espacios";
@@ -93,33 +93,33 @@ function calcular() {
         valido = false;
     }
 
-    // ===== EGRESOS =====
-    if (egresos === "") {
-        document.getElementById("errEgresos").textContent = "Campo obligatorio";
-        valido = false;
-    } else if (egresos == 0) {
-        document.getElementById("errEgresos").textContent = "Debe ingresar un valor mayor a 0";
-        valido = false;
-    } else if (!esNumero(egresos)) {
-        document.getElementById("errEgresos").textContent = "Solo números";
-        valido = false;
-    } else if (esNegativo(egresos)) {
-        document.getElementById("errEgresos").textContent = "Ingrese un valor correcto";
-        valido = false;
-    }
+    // // ===== EGRESOS =====
+    // if (egresos === "") {
+    //     document.getElementById("errEgresos").textContent = "Campo obligatorio";
+    //     valido = false;
+    // } else if (egresos == 0) {
+    //     document.getElementById("errEgresos").textContent = "Debe ingresar un valor mayor a 0";
+    //     valido = false;
+    // } else if (!esNumero(egresos)) {
+    //     document.getElementById("errEgresos").textContent = "Solo números";
+    //     valido = false;
+    // } else if (esNegativo(egresos)) {
+    //     document.getElementById("errEgresos").textContent = "Ingrese un valor correcto";
+    //     valido = false;
+    // }
 
-    // VALIDACIÓN CRUZADA: EGRESOS NO PUEDE SER MAYOR QUE INGRESOS
-    if (
-        esNumero(ingresos) &&
-        esNumero(egresos) &&
-        parseFloat(ingresos) > 0 &&
-        parseFloat(egresos) >= 0
-    ) {
-        if (parseFloat(egresos) > parseFloat(ingresos)) {
-            document.getElementById("errEgresos").textContent = "No puede ser mayor que ingresos";
-            valido = false;
-        }
-    }
+    // // VALIDACIÓN CRUZADA: EGRESOS NO PUEDE SER MAYOR QUE INGRESOS
+    // if (
+    //     esNumero(ingresos) &&
+    //     esNumero(egresos) &&
+    //     parseFloat(ingresos) > 0 &&
+    //     parseFloat(egresos) >= 0
+    // ) {
+    //     if (parseFloat(egresos) > parseFloat(ingresos)) {
+    //         document.getElementById("errEgresos").textContent = "No puede ser mayor que ingresos";
+    //         valido = false;
+    //     }
+    // }
 
     // ===== MONTO =====
     if (monto === "") {
@@ -177,7 +177,7 @@ function calcular() {
 
     // ✅ TODO OK → CALCULAR
     ingresos = parseFloat(ingresos);
-    totalGastos = parseFloat(totalGastos);
+    //totalGastos = parseFloat(totalGastos);
     monto = parseFloat(monto);
     plazo = parseFloat(plazo);
     tasa = parseFloat(tasa);
