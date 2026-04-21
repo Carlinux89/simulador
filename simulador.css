@@ -291,6 +291,7 @@ i {
 
 .error {
     color: red;
+    font-style: italic;
     font-size: 12px;
     margin-top: 2px;
     display: block;

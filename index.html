@@ -38,12 +38,28 @@
             <input type="text" id="txtIngresos" inputmode="decimal" placeholder="$ 0.00">
             <small class="error" id="errIngresos"></small>
 
-            <label for="txtEgresos">Egresos</label>
+            <!-- <label for="txtEgresos">Egresos</label>
             <input type="text" id="txtEgresos" inputmode="decimal" placeholder="$ 0.00">
-            <small class="error" id="errEgresos"></small>
+            <small class="error" id="errEgresos"></small> -->
+
+
+            <label for="txtArriendo">Arriendo</label>
+            <input type="text" id="txtArriendo" inputmode="decimal" placeholder="$ 0.00">
+
+            <label for="txtAlimentacion">Alimentación</label>
+            <input type="text" id="txtAlimentacion" inputmode="decimal" placeholder="$ 0.00">
+
+            <label for="txtVarios">Varios</label>
+            <input type="text" id="txtVarios" inputmode="decimal" placeholder="$ 0.00">
+
 
             <div class="result">
-                <p><i class="fa-solid fa-coins"></i> Disponible: <span id="spnDisponible"></span></p>
+
+                <p>
+                    <i class="fa-solid fa-wallet"></i>
+                    Total gastos:
+                    <span id="spnTotalGastos"></span>
+                </p <p><i class="fa-solid fa-coins"></i> Disponible: <span id="spnDisponible"></span></p>
                 <p><i class="fa-solid fa-chart-line"></i> Capacidad de pago mensual:
                     <span id="spnCapacidadPago"></span>
                 </p>

@@ -2,7 +2,7 @@
 
 function limpiarErrores() {
     document.getElementById("errIngresos").textContent = "";
-    document.getElementById("errEgresos").textContent = "";
+    // document.getElementById("errEgresos").textContent = "";
     document.getElementById("errMonto").textContent = "";
     document.getElementById("errPlazo").textContent = "";
     document.getElementById("errTasaInteres").textContent = "";
@@ -42,7 +42,12 @@ function calcular() {
     let valido = true;
 
     let ingresos = document.getElementById("txtIngresos").value;
-    let egresos = document.getElementById("txtEgresos").value;
+    //let egresos = document.getElementById("txtEgresos").value;
+
+    let arriendo = document.getElementById("txtArriendo").value;
+    let alimentacion = document.getElementById("txtAlimentacion").value;
+    let varios = document.getElementById("txtVarios").value;
+
     let monto = document.getElementById("txtMonto").value;
     let plazo = document.getElementById("txtPlazo").value;
     let tasa = document.getElementById("txtTasaInteres").value;
@@ -172,12 +177,21 @@ function calcular() {
 
     // ✅ TODO OK → CALCULAR
     ingresos = parseFloat(ingresos);
-    egresos = parseFloat(egresos);
+    totalGastos = parseFloat(totalGastos);
     monto = parseFloat(monto);
     plazo = parseFloat(plazo);
     tasa = parseFloat(tasa);
 
-    let disponible = calcularDisponible(ingresos, egresos);
+
+    arriendo = parseFloat(arriendo) || 0;
+    alimentacion = parseFloat(alimentacion) || 0;
+    varios = parseFloat(varios) || 0;
+
+    let totalGastos = arriendo + alimentacion + varios;
+    mostrarEnSpan("spnTotalGastos", totalGastos.toFixed(2));
+
+
+    let disponible = calcularDisponible(ingresos, totalGastos);
     mostrarEnSpan("spnDisponible", disponible.toFixed(2));
 
     let capacidadPagoMensual = calcularCapacidadPago(disponible);
@@ -204,10 +218,16 @@ function tieneEspacios(valor) {
 
 function reiniciar() {
     document.getElementById("txtIngresos").value = "";
-    document.getElementById("txtEgresos").value = "";
+    //document.getElementById("txtEgresos").value = "";
     document.getElementById("txtMonto").value = "";
     document.getElementById("txtPlazo").value = "";
     document.getElementById("txtTasaInteres").value = "";
+
+    document.getElementById("txtArriendo").value = "";
+    document.getElementById("txtAlimentacion").value = "";
+    document.getElementById("txtVarios").value = "";
+    mostrarEnSpan("spnTotalGastos", "");
+
     mostrarEnSpan("spnDisponible", "");
     mostrarEnSpan("spnCapacidadPago", "");
     mostrarEnSpan("spnInteresPagar", "");
